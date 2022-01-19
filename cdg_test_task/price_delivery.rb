@@ -33,7 +33,7 @@ class PriceDelivery
     end
   end
 
-  def calculate_price()
+  def calculate_price
     return -1 if length.zero? || width.zero? || height.zero? || weight.zero?
 
     volume = length * width * height
@@ -42,30 +42,24 @@ class PriceDelivery
     3 * distance.to_f
 
   end
-  def get_delivery_info()
-    {weight: weight, length: length, width: width, height: height, distance: distance, price: price}
+
+  def get_delivery_info
+    { weight: weight, length: length, width: width, height: height, distance: distance, price: price }
   end
 
-
-
-
 end
-def start()
 
+def start
+  puts 'Enter weight: '
+  input_weight = gets
+  puts 'Enter length, width, height: '
+  input_length = gets
+  input_width = gets
+  input_height = gets
+  delivery = PriceDelivery.new(weight: input_weight, length: input_length, width: input_width, height: input_height)
+  puts delivery.get_distance('Seattle', 'New York')
+  puts delivery.calculate_price
+  delivery.get_delivery_info
 end
-test, test1 = PriceDelivery.new(weight: 5, length: 10, width: 10, height: 10)
-# test2 = PriceDelivery.new(weight: 5, length: 100, width: 100, height: 200)
-# test3 = PriceDelivery.new(weight: 15, length: 100, width: 200, height: 200)
-# puts "Enter origin city: \n"
-# origin = gets.chomp
-# puts "Enter destination city: \n"
-# destination = gets.chomp
-# puts tets.get_distance(origin, destination)
-# puts test.get_distance("Seattle", "New York")
-# puts test.get_distance('Seattle', 'Russia, Moscow')
-# puts test.get_distance('Seattle', 'New York')
-puts test.get_delivery_info
 
-# puts (test1.cost_calculation('Seattle', 'New York'))
-# puts (test2.cost_calculation('Seattle', 'New York'))
-# puts (test3.cost_calculation('Seattle', 'New York'))
+start
