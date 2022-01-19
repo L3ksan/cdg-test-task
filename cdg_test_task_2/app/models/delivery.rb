@@ -7,5 +7,6 @@ class Delivery < ApplicationRecord
                            length: { minimum: 10, maximum: 15 }
   validates :email, length: { maximum: 150 },
                     format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :weight, :length, :width, :height, :origin, :destination, presence: true
+  validates :weight, :length, :width, :height, :origin, numericality: true, presence: true
+  validates :destination, presence: true
 end
