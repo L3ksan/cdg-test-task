@@ -1,0 +1,12 @@
+Comp example:
+    Enter origin city:
+    Russia, Moscow
+    Enter destination city:
+    Russia, Ufa
+    {"destination_addresses":["Ufa, Republic of Bashkortostan, Russia"],"origin_addresses":["Moscow, Russia"],"rows":[{"elements":[{"distance":{"text":"1352.4 km","value":1352355},"duration":{"text":"17 hour 30 mins","value":63037},"status":"OK"}]}],"status":"OK"}
+Failed example:
+    Enter origin city:
+    Russian, Moscow
+    Enter destination city:
+    seattle
+    {"destination_addresses":["Seattle, WA, USA"],"origin_addresses":["Moscow, Russia"],"rows":[{"elements":[{"status":"ZERO_RESULTS"}]}],"status":"OK"}
